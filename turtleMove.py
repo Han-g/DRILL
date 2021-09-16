@@ -1,31 +1,36 @@
 import turtle
 
-x,y = turtle.position()
-turtle.pendown()
+def run_turtle(deg, dist = 50):
+    turtle.setheading(deg)
+    turtle.forward(dist)
+    turtle.stamp()
 
-def move_f():
-    turtle.setheading(90)
-    turtle.forward(50)
+def move_up():
+    run_turtle(90)
+    print('UP')
 
-def move_l():
-    turtle.setheading(180)
-    turtle.forward(50)
+def move_left():
+    run_turtle(180)
+    print('LEFT')
 
-def move_b():
-    turtle.setheading(-90)
-    turtle.forward(50)
+def move_down():
+    run_turtle(-90)
+    print('DOWN')
 
-def move_r():
-    turtle.setheading(0)
-    turtle.forward(50)
+def move_right():
+    run_turtle(0)
+    print('RIGHT')
 
-def restart():
-    turtle.reset()
+def finish():
+    turtle.bye()
 
-turtle.onkey(move_f, 'w')
-turtle.onkey(move_l, 'a')
-turtle.onkey(move_b, 's')
-turtle.onkey(move_r, 'd')
+turtle.shape('turtle')
 
-turtle.onkey(restart,'Escape')
+turtle.onkey(move_up, 'w')
+turtle.onkey(move_left, 'a')
+turtle.onkey(move_down, 's')
+turtle.onkey(move_right, 'd')
+
+turtle.onkey(finish,'Escape')
 turtle.listen()
+turtle.mainloop()
