@@ -57,5 +57,3 @@ while running:
 
     running_move()
     handle_events()
-
-close_canvas()
