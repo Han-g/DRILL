@@ -71,17 +71,17 @@ def draw_line_basic(p1, p2):
 
 def draw_line():
     # k = a / b
-    a = 3
-    b = 1
+    a = 300
+    b = 100
 
-    for i in range(0, 100+1, 2):
+    for i in range(0, 300+1, 2):
         t = math.degrees(i/100)
         # x = (1 - t) * x1 + t * x2
         # y = (1 - t) * y1 + t * y2
         x = (a - b) * math.cos(t) + b * math.cos(t * (a / b - 1))
         y = (a - b) * math.sin(t) - b * math.sin(t * (a / b - 1))
         print("%d %d %d", t, x * 100, y * 100)
-        draw_point((x * 100, y * 100))
+        draw_point((x, y))
 
     pass
 
